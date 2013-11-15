@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC41A6B9-7C08-4F2D-8461-C75B69A22E04}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MyAdventureGame</RootNamespace>
+    <AssemblyName>MyAdventureGame</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Externalconsole>True</Externalconsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Externalconsole>True</Externalconsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Entities\Room.cs" />
+    <Compile Include="Common\Direction.cs" />
+    <Compile Include="Entities\Player.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\Container.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\HelpCommand.cs" />
+    <Compile Include="Commands\QuitCommand.cs" />
+    <Compile Include="Commands\MessageCommand.cs" />
+    <Compile Include="Commands\LookCommand.cs" />
+    <Compile Include="Entities\Portal.cs" />
+    <Compile Include="Commands\ExitsCommand.cs" />
+    <Compile Include="Commands\GoCommand.cs" />
+    <Compile Include="Common\EntityManager.cs" />
+    <Compile Include="Common\InputManager.cs" />
+    <Compile Include="Common\OutputManager.cs" />
+    <Compile Include="Common\GameObject.cs" />
+    <Compile Include="Common\Util.cs" />
+    <Compile Include="Entities\Box.cs" />
+    <Compile Include="Commands\OpenCommand.cs" />
+    <Compile Include="Entities\IOpenableEntity.cs" />
+    <Compile Include="Commands\CloseCommand.cs" />
+    <Compile Include="Commands\DelayCommand.cs" />
+    <Compile Include="Commands\GodModeCommand.cs" />
+    <Compile Include="Events\PlayerEnterRoomEventArgs.cs" />
+    <Compile Include="Events\PlayerExitRoomEventArgs.cs" />
+    <Compile Include="Events\PlayerUsePortalEventArgs.cs" />
+    <Compile Include="Events\PlayerCancelEventArgs.cs" />
+    <Compile Include="Entities\SingletonRoom.cs" />
+    <Compile Include="Rooms\TheGrid\StartRoom.cs" />
+    <Compile Include="Rooms\TheGrid\SurvivalKit01Room.cs" />
+    <Compile Include="Events\PlayerOpenEntityEventArgs.cs" />
+    <Compile Include="Events\RenderDescriptionEventArgs.cs" />
+    <Compile Include="Commands\InventoryCommand.cs" />
+    <Compile Include="Commands\PickupCommand.cs" />
+    <Compile Include="Commands\DropCommand.cs" />
+    <Compile Include="Events\PlayerPickupEntity.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="Common\" />
+    <Folder Include="Commands\" />
+    <Folder Include="Events\" />
+    <Folder Include="Rooms\" />
+    <Folder Include="Rooms\House\" />
+    <Folder Include="Rooms\TheGrid\" />
+  </ItemGroup>
+</Project>
